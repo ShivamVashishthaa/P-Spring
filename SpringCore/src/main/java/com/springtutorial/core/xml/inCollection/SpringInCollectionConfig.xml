@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx.xsd
+">
+
+	
+
+	<bean class="com.springtutorial.core.xml.inCollection.Address"
+		name="a1">
+		<constructor-arg name="city" value="BSR" />
+		<constructor-arg name="state" value="UP" />
+	</bean>
+
+	<bean class="com.springtutorial.core.xml.inCollection.Student"
+		name="s1">
+		<constructor-arg name="id" value="1"></constructor-arg>
+		<constructor-arg name="name" value="vashishtha"></constructor-arg>
+		<constructor-arg name="address" ref="a1"></constructor-arg>
+		<constructor-arg name="phoneNumbers">
+			<set>
+				<value>83838388383</value>
+				<value>838388383</value>
+				<value>838338383</value>
+				<value>8383838883</value>	
+			</set>
+		</constructor-arg>
+		<constructor-arg name="courses">
+			<map>
+				<entry key="1" value="java"/>
+				<entry key="2" value="python"/>
+				<entry key="3" value="DSA"/>
+				<entry key="4" value="Kotline"/>
+			</map>
+		</constructor-arg>
+	</bean>
+	<bean class="com.springtutorial.core.xml.inCollection.Student"
+		name="s2">
+		<property name="id" value="1"/>
+		<property name="name" value="vashishtha"/>
+		<property name="address" ref="a1"/>
+		<property name="phoneNumbers">
+			<set>
+				<value>83838388383</value>
+				<value>838388383</value>
+				<value>838338383</value>
+				<value>8383838883</value>	
+			</set>
+		</property>
+		<property name="courses">
+			<map>
+				<entry key="1" value="java"/>
+				<entry key="2" value="python"/>
+				<entry key="3" value="DSA"/>
+				<entry key="4" value="Kotline"/>
+			</map>
+		</property>
+	</bean>
+	
+
+
+</beans>
